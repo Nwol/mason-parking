@@ -7,7 +7,7 @@ import LoginStore from './models/LoginStore';
 class Login extends Component {
     constructor(props){
         super(props)
-        const loginModel = props[LoginStore.type.LOGIN_MODEL]
+        const loginModel = props[LoginStore.type.LOGIN_MODEL];
         this.viewModel = new LoginViewModel(loginModel);
     }
     render() {

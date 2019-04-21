@@ -68,7 +68,7 @@ class App extends Component {
 						<LinkContainer to={"/"}>
 							<Navbar.Brand>
 								<img
-									class="logo-img"
+									className="logo-img"
 									alt=""
 									src={mySvg}
 									width="30"

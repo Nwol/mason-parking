@@ -21,6 +21,13 @@ class LoginController extends Component{
 
     onSubmit = (e) => {
         e.preventDefault();
+        if(!(this.state.email.includes('@'))){
+            let currentState = this.state;
+            currentState.errorMessage = "Invalid Email";
+            currentState.show = true;
+            this.setState(currentState);
+            return;
+        }
         if(!(this.state.email.includes('@gmu.edu') || this.state.email.includes('@masonlive.gmu.edu'))){
             let currentState = this.state;
             currentState.errorMessage = "You need a mason email in order to register/login for this service";
