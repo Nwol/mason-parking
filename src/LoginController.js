@@ -21,7 +21,14 @@ class LoginController extends Component{
 
     onSubmit = (e) => {
         e.preventDefault();
-        firebase.auth.createuserWithEmailAndPassword(this.state.email,this.state.email.password)
+        if(!(this.state.email.includes('@gmu.edu') || this.state.email.includes('@masonlive.gmu.edu'))){
+            let currentState = this.state;
+            currentState.errorMessage = "You need a mason email in order to register/login for this service";
+            currentState.show = true;
+            this.setState(currentState);
+            return;
+        }
+        firebase.auth.createUserWithEmailAndPassword(this.state.email,this.state.password)
         .then(success => {
             let currentState = this.state;
             currentState.redirect = true;

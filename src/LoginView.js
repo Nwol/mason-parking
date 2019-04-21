@@ -1,12 +1,12 @@
-import React, {Component} from "react";
-import {Form, Alert, Button} from "react-bootstrap";
-import {Redirect} from "react-router-dom";
+import React, { Component } from 'react';
+import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
+import { Redirect } from 'react-router-dom';
 
 class LoginView extends Component {
     render() {
         const {
-            email,
-            password,
             errorMessage,
             show,
             redirect,
@@ -14,18 +14,22 @@ class LoginView extends Component {
             handleEmailChange,
             handlePasswordChange
         } = this.props;
-    
-        if(redirect){
-            return <Redirect to={"/"}/>
+
+        if (redirect) {
+            return <Redirect to={"/"} />
         }
         return (
             <div>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Label>Mason Email:</Form.Label>{' '}
-                    <Form.Control name="email" placeholder="Email" onChange={handleEmailChange}/>
-                    <Form.Label>Password:</Form.Label>{' '}
-                    <Form.Control type="password" name="password" onChange={handlePasswordChange}/>
-                    {show && <Alert bsStyle="danger">{errorMessage}</Alert>}
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Mason Email:</Form.Label>
+                        <Form.Control name="email" placeholder="Enter email" onChange={handleEmailChange} />
+                    </Form.Group>
+                    <Form.Group controlId="formBasicPassword">
+                        <Form.Label>Password:</Form.Label>
+                        <Form.Control type="password" name="password" placeholder="Password" onChange={handlePasswordChange} />
+                    </Form.Group>
+                    {show && <Alert variant="danger">{errorMessage}</Alert>}
                     <Button variant="primary" type={"submit"}>Log in(or register)</Button>
                 </Form>
             </div>

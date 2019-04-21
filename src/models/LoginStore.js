@@ -14,4 +14,4 @@ class LoginStore {
     })
 }
 
-export default LoginModel
+export default LoginStore;

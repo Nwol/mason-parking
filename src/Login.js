@@ -1,11 +1,9 @@
 import React,{Component} from 'react';
-import { inject } from 'mobx-react';
 import LoginController from './LoginController';
 import LoginViewModel from './LoginViewModel';
 import LoginStore from './models/LoginStore';
 
 
-@inject(LoginStore.type.LOGIN_MODEL)
 class Login extends Component {
     constructor(props){
         super(props)
@@ -20,3 +18,4 @@ class Login extends Component {
 }
 
 export default Login;
+
