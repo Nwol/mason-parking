@@ -1,86 +1,99 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import {HashRouter, Redirect, Route} from "react-router-dom";
-import Login from "./Login"
-import firebase from "./firebase"
-import {Nav, Navbar, NavItem} from "react-bootstrap";
-import {LinkContainer} from "react-router-bootstrap"
+import { HashRouter, Route } from 'react-router-dom';
+import Login from './Login';
+import Logout from './Logout';
+import firebase from './firebase';
+import Navbar from 'react-bootstrap/Navbar';
+import Nav from 'react-bootstrap/Nav';
+import { LinkContainer } from 'react-router-bootstrap';
+
+import mySvg from './gmu_edu-icon.svg';
+
 
 class App extends Component {
-  constructor(props){
-    super(props);
-    this.state={user: ''};
-  }
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
 
-  componentWillMount() {
-    var _this = this;
-    console.log(firebase);
-    firebase.auth.onAuthStateChanged(function (user) {
-      _this.setState({user: ''});
-    }, function(error) {
-      console.log(error);
-    });
-  }
+	componentWillMount() {
+		var _this = this;
+		console.log(firebase);
+		firebase.auth.onAuthStateChanged(function (user) {
+			_this.setState({ user: user });
+		}, function (error) {
+			console.log(error);
+		});
+	}
 
-  /**
-   * Add other navs later
-   */
-  render() {
-    let nav;
-    if(this.state.user){
-      nav = <Nav>
-        <LinkContainer to={"/whereDidIPark"}>
+	/**
+	 * Add other navs later
+	 */
+	render() {
+		let nav;
+		if (this.state.user) {
+			nav = <Nav className="mr-auto">
+				{/* <LinkContainer to={"/whereDidIPark"}>
           <NavItem>Where Did I Park?</NavItem>
         </LinkContainer>
         <LinkContainer to={"/viewScreen"}>
           <NavItem>View Parking Map</NavItem>
-        </LinkContainer>
-        <LinkContainer to={"/logout"}>
-          <NavItem>Logout</NavItem>
-        </LinkContainer>
-      </Nav>
-    }
-    else{
-      nav = <Nav>
-          <LinkContainer to={"/login"}>
-            <NavItem>Register/Sign-in</NavItem>
-          </LinkContainer>
-      </Nav>
-    }
-    if(this.state.user === undefined){
-      return <span>Loading...</span>
-    }
+		</LinkContainer> */}
+				<Nav.Link>
+					<LinkContainer to={"/logout"}>
+						<Nav.Item>Logout</Nav.Item>
+					</LinkContainer>
+				</Nav.Link>
+			</Nav>
+		}
+		else {
+			nav = <Nav className="mr-auto">
+				<Nav.Link>
+					<LinkContainer to={"/login"}>
+						<Nav.Item>Register/Sign-in</Nav.Item>
+					</LinkContainer>
+				</Nav.Link>
+			</Nav>
+		}
+		if (this.state.user === undefined) {
+			return <span>Loading...</span>
+		}
 
-    return (
-      <HashRouter>
-        <div className="App">
-          <Navbar>
-            <Navbar.Header>
-              <LinkContainer to={"/"}>
-                <Navbar.Brand>Mason Parking</Navbar.Brand>
-              </LinkContainer>
-            </Navbar.Header>
-            {nav}
-          </Navbar>
-          <div className={"content"}>
-            <div className={"container"}>
-              <Route exact path={"/"}/>
-              <Route exact path={"/login"} component={Login}/>
-            </div>
-          </div>
-        </div>
-      </HashRouter>
-    );
-  }
+		return (
+			<HashRouter>
+				<div className="App">
+					<Navbar bg="light" variant="light">
+						<LinkContainer to={"/"}>
+							<Navbar.Brand>
+								<img
+									class="logo-img"
+									alt=""
+									src={mySvg}
+									width="30"
+									height="30"
+								/>
+								{'Mason Parking'}
+							</Navbar.Brand>
+						</LinkContainer>
+						{nav}
+					</Navbar>
+					<div className={"content"}>
+						<div className={"container"}>
+							<Route exact path={"/"}/>
+							<Route exact path={"/login"} component={Login} />
+							<Route exact path={"/logout"} component={Logout} />
+						</div>
+					</div>
+				</div>
+			</HashRouter>
+		);
+	}
 
-  logout(){
-    firebase.auth.signOut();
-    return <Redirect to="/"/>
-  }
 
 
-  
+
 }
 
 export default App;
