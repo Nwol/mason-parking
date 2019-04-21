@@ -1,20 +1,18 @@
-import LoginModel from './LoginModel';
-
 class LoginViewModel{
-    constructor(loginInfo){
-        this.LoginModel.loginInfo = loginInfo;
+    constructor(loginStore){
+        this.store = loginStore;
     }
 
     getLoginInfo(){
-        return this.LoginModel.getLoginInfo();
+        return this.store.getLoginInfo();
     }
 
     setEmail(email){
-        this.LoginModel.setEmail(email);
+        this.store.setEmail(email);
     }
 
     setPassword(password){
-        this.LoginModel.setPassword(password);
+        this.store.setPassword(password);
     }
 }
 

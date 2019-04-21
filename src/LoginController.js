@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import LoginView from './LoginView';
+import firebase from './firebase'
 
 class LoginController extends Component{
     state = {
