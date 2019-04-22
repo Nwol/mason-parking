@@ -74,7 +74,7 @@ class App extends Component {
 									width="30"
 									height="30"
 								/>
-								{'Mason Parking'}
+								{'Where Did I Park?'}
 							</Navbar.Brand>
 						</LinkContainer>
 						{nav}
