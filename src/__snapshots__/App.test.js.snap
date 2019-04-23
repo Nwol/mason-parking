@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authenticated viewscreen matches the snapshot 1`] = `
+<div>
+  Loading...
+</div>
+`;
+
+exports[`login screen matches the snapshot 1`] = `
+<div
+  className="login container"
+>
+  <form
+    className=""
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="form-label"
+        htmlFor="formBasicEmail"
+      >
+        Mason Email:
+      </label>
+      <input
+        className="form-control"
+        id="formBasicEmail"
+        name="email"
+        onChange={[Function]}
+        placeholder="Enter email"
+      />
+    </div>
+    <div
+      className="form-group"
+    >
+      <label
+        className="form-label"
+        htmlFor="formBasicPassword"
+      >
+        Password:
+      </label>
+      <input
+        className="form-control"
+        id="formBasicPassword"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      type="submit"
+    >
+      Log in(or register)
+    </button>
+  </form>
+</div>
+`;
+
+exports[`view screen matches the snapshot 1`] = `
+<div>
+  Loading...
+</div>
+`;
