@@ -2,6 +2,7 @@
   "name": "mason-parking",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://Nwol.github.io/mason-parking",
   "dependencies": {
     "@firebase/firestore": "^1.2.0",
     "bootstrap": "^4.3.1",
