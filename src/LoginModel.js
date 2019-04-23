@@ -1,6 +1,3 @@
-import 'firebase/auth';
-import 'firebase/firestore';
-
 class LoginModel {
     loginInfo = {email: '', password: '', errorMessage: '', show: false, redirect: false};
 
