@@ -8,6 +8,7 @@ import firebase from './firebase';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import ViewScreen from './ViewScreen';
+import Spinner from 'react-bootstrap/Spinner';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import mySvg from './gmu_edu-icon.svg';
@@ -60,7 +61,7 @@ class App extends Component {
 			</Nav>
 		}
 		if (this.state.user === undefined) {
-			return <span>Loading...</span>
+			return <Spinner animation="grow" size="lg" variant="success" />
 		}
 
 		return (

@@ -45,15 +45,15 @@ export class ViewScreen extends Component {
 		let stateSetterVal = [];
 		for (let i = 0; i < this.parkingLots.length; i++) {
 			if (i === 0) {
-				smallLatVal = this.parkingLots[i]['lat'] - 38.831500;
-				smallLongVal = this.parkingLots[i]['lng'] - (-77.311488);
+				smallLatVal = Math.abs(this.parkingLots[i]['lat'] - 38.831500);
+				smallLongVal = Math.abs(this.parkingLots[i]['lng'] - (-77.311488));
 				chosenVal = this.parkingLots[i];
 				continue;
 			}
 			else {
-				if (this.parkingLots[i]['lat'] - 38.831500 < smallLatVal && this.parkingLots[i]['lng'] - (-77.311488) < smallLongVal) {
-					smallLatVal = this.parkingLots[i]['lat'] - 38.831500;
-					smallLongVal = this.parkingLots[i]['lng'] - (-77.311488);
+				if (Math.abs(this.parkingLots[i]['lat'] - 38.831500) < smallLatVal && Math.abs(this.parkingLots[i]['lng'] - (-77.311488)) < smallLongVal) {
+					smallLatVal = Math.abs(this.parkingLots[i]['lat'] - 38.831500);
+					smallLongVal = Math.abs(this.parkingLots[i]['lng'] - (-77.311488));
 					chosenVal = this.parkingLots[i];
 				}
 				else {
