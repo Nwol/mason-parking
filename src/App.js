@@ -7,6 +7,7 @@ import Logout from './Logout';
 import firebase from './firebase';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import ViewScreen from './ViewScreen';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import mySvg from './gmu_edu-icon.svg';
@@ -20,7 +21,6 @@ class App extends Component {
 
 	componentWillMount() {
 		var _this = this;
-		console.log(firebase);
 		firebase.auth.onAuthStateChanged(function (user) {
 			_this.setState({ user: user });
 		}, function (error) {
@@ -37,10 +37,12 @@ class App extends Component {
 			nav = <Nav className="mr-auto">
 				{/* <LinkContainer to={"/whereDidIPark"}>
           <NavItem>Where Did I Park?</NavItem>
-        </LinkContainer>
-        <LinkContainer to={"/viewScreen"}>
-          <NavItem>View Parking Map</NavItem>
 		</LinkContainer> */}
+				<Nav.Link>
+					<LinkContainer to={"/viewScreen"}>
+						<Nav.Item>View Parking Map</Nav.Item>
+					</LinkContainer>
+				</Nav.Link>
 				<Nav.Link>
 					<LinkContainer to={"/logout"}>
 						<Nav.Item>Logout</Nav.Item>
@@ -80,11 +82,10 @@ class App extends Component {
 						{nav}
 					</Navbar>
 					<div className={"content"}>
-						<div className={"container"}>
-							<Route exact path={"/"}/>
-							<Route exact path={"/login"} component={Login} />
-							<Route exact path={"/logout"} component={Logout} />
-						</div>
+						<Route exact path={"/"} render={(props) => <ViewScreen user={this.state.user} />} />
+						<Route exact path={"/viewScreen"} component={ViewScreen} />
+						<Route exact path={"/login"} component={Login} />
+						<Route exact path={"/logout"} component={Logout} />
 					</div>
 				</div>
 			</HashRouter>

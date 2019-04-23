@@ -19,7 +19,7 @@ class LoginView extends Component {
             return <Redirect to={"/"} />
         }
         return (
-            <div>
+            <div className="login container">
                 <Form onSubmit={handleSubmit}>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Mason Email:</Form.Label>
