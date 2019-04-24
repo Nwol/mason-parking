@@ -4,11 +4,9 @@
 
 ### Splash Page
 ![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/splash%20page.png)
-splash page of application
 
 ### Login screen
 ![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/login%20screen.png)
-login screen
 
 ### Login rejected due to email
 ![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/email%20rejected%20because%20not%20%40gmu.png)
