@@ -129,5 +129,5 @@ export class ViewScreen extends Component {
 }
 
 export default GoogleApiWrapper({
-	apiKey: 'AIzaSyBlKEmXM6RHfCq2eYdxUtTMfbu-XTCqVIw'
+	apiKey: ''
 })(ViewScreen);

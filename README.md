@@ -1,3 +1,27 @@
+## Screenshots in order
+
+
+
+### Splash Page
+![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/splash%20page.png)
+splash page of application
+
+### Login screen
+![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/login%20screen.png)
+login screen
+
+### Login rejected due to email
+![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/email%20rejected%20because%20not%20%40gmu.png)
+
+### Where did I park screen
+![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/where%20did%20I%20park%20screen.png)
+
+### parking tracker
+![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/parking%20tracked%20on%20google%20maps%20api.png)
+
+### View screen after login
+![alt text](https://github.com/Nwol/mason-parking/blob/master/screenshots/view%20screen%20after%20login.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

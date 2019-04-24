@@ -3,7 +3,7 @@ require('firebase/auth');
 require('firebase/firestore');
 
 const config = {
-    apiKey: "AIzaSyAwG8a-54VJ_w8nwrwYztTXA6FNp_sQ_mY",
+    apiKey: "",
     authDomain: "mason-parking.firebaseapp.com",
     databaseURL: "https://mason-parking.firebaseio.com",
     projectId: "mason-parking",
